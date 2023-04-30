@@ -7,4 +7,4 @@ spec:
   - port: 80
   selector:
     app: phpmyadmin
-  type: NodePort
+  # type: NodePort

@@ -7,4 +7,4 @@ spec:
   - port: 4150
   selector:
     app: nestjs
-  clusterIP: None
+  # clusterIP: None
