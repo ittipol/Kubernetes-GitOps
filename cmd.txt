@@ -1,1 +1,6 @@
 k exec --stdin --tty mysql-54dcb65f75-fjchp -- /bin/bash
+kubectl exec -it demo-pod -- /bin/sh
+
+kubectl run mycurlpod --image=busybox -i --tty -- sh
+
+kubectl config set-context --current --namespace=argocd
