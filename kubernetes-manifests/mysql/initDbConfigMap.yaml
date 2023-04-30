@@ -1,0 +1,8 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: initdbconfigmap
+  #namespace: default
+data:
+  init.sql: |
+    CREATE DATABASE IF NOT EXISTS test_db;
