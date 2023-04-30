@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nestjs
+spec:
+  selector:
+    matchLabels:
+      app: nestjs
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: nestjs
+    spec:
+      containers:
+      - name: nestjs
+        image: nestjs:v1
+        imagePullPolicy: Never
+        livenessProbe:
+          httpGet:
+            path: /api/health
+            port: 4150
+          initialDelaySeconds: 5
+          periodSeconds: 5
+        ports:
+        - name: nestjs
+          containerPort: 4150
+
+  

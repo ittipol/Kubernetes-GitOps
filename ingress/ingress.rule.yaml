@@ -1,0 +1,59 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-app
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+    - host: ingress.test # test
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: ingress-test-svc
+                port:
+                  number: 8080
+    - host: phpmyadmin
+      http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: phpmyadmin
+              port:
+                number: 80
+    - host: nestjs # expose outside for test
+      http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: nestjs
+              port:
+                number: 4150
+    - host: nuxt
+      http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: nuxt
+              port:
+                number: 3000
+    - host: nextjs
+      http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: nextjs
+              port:
+                number: 3000
+            

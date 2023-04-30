@@ -1,0 +1,28 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev --dotenv .env.development --port=3037",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "start": "pm2 start ecosystem.config.js --env production"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "nuxt": "^3.3.1",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.7"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.3.0",
+    "@fortawesome/free-brands-svg-icons": "^6.3.0",
+    "@fortawesome/free-solid-svg-icons": "^6.3.0",
+    "@fortawesome/vue-fontawesome": "^3.0.3",
+    "@pinia/nuxt": "^0.4.7",
+    "pinia": "^2.0.33"
+  },
+  "overrides": {
+    "vue": "latest"
+  }
+}

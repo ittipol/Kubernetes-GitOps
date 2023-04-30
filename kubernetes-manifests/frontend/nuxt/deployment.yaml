@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nuxt
+  #namespace: frontend
+spec:
+  selector:
+    matchLabels:
+      app: nuxt # has to match .spec.template.metadata.labels
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: nuxt # has to match .spec.selector.matchLabels
+    spec:
+      containers:
+      - name: nuxt
+        image: nuxt:v1
+        imagePullPolicy: Never
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 3000
+          initialDelaySeconds: 5
+          periodSeconds: 5
+        ports:
+        - name: nuxt
+          containerPort: 3000

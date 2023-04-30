@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: phpmyadmin
+spec:
+  selector:
+    matchLabels:
+      app: phpmyadmin
+  template:
+    metadata:
+      labels:
+        app: phpmyadmin
+    spec:
+      containers:
+      - image: phpmyadmin/phpmyadmin
+        #imagePullPolicy: Always
+        name: phpmyadmin
+        #command: [ "/bin/sh", "-c", "ls /var/www/config/nginx" ]
+        env:
+        - name: PMA_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: phpmyadmin-configmap
+              key: mysql_host
+        - name: PMA_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: phpmyadmin-configmap
+              key: mysql_port
+        ports:
+        - containerPort: 80
+          name: phpmyadmin
+        volumeMounts:
+        - name: nginx-config-test
+          mountPath: "/var/www/html"
+          subPath: html
+          readOnly: true
+      volumes:
+      - name: nginx-config-test
+        configMap:
+          name: nginxconfigmap

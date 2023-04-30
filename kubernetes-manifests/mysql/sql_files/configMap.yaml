@@ -1,0 +1,2 @@
+#kubectl create configmap testdbconfigmap --from-file=test.sql
+#kubectl create configmap initdbconfigmap --from-file=init=init.sql
