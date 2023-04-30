@@ -30,12 +30,3 @@ spec:
         ports:
         - containerPort: 80
           name: phpmyadmin
-        volumeMounts:
-        - name: nginx-config-test
-          mountPath: "/var/www/html"
-          subPath: html
-          readOnly: true
-      volumes:
-      - name: nginx-config-test
-        configMap:
-          name: nginxconfigmap
