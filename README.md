@@ -12,7 +12,7 @@ alias k=kubectl
 brew install helm
 ```
 
-Helm Chart
+## Helm Chart
 - https://helm.sh/docs/
 - https://artifacthub.io/
 
