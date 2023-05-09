@@ -3,12 +3,18 @@
 ## Install Kubernetes
 ``` bash
 brew install kubectl
+
+alias k=kubectl
 ```
 
 ## Install Helm
 ``` bash
 brew install helm
 ```
+
+## Helm Chart
+- https://helm.sh/docs/
+- https://artifacthub.io/
 
 # Argo CD
 ## Install Argo CD
