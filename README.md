@@ -5,6 +5,11 @@
 brew install kubectl
 ```
 
+## Install Helm
+``` bash
+brew install helm
+```
+
 # Argo CD
 ## Install Argo CD
 ``` bash
