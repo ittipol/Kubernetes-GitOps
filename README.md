@@ -77,7 +77,7 @@ minikube docker-env
 
 eval $(minikube -p minikube docker-env)
 
-# test to list a docker image that inside minikube
+# list a docker images that inside minikube
 minikube ssh
 
 docker image ls
