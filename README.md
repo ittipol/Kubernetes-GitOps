@@ -56,6 +56,20 @@ brew install minikube
 ## Start Minikube
 ``` bash
 minikube start
+# or
+minikube start --cpus 4 --memory 8192 --vm-driver hyperkit
+```
+
+## Build docker images directly inside minikube
+``` bash
+minikube docker-env
+
+eval $(minikube -p minikube docker-env)
+
+# test to list a docker image that inside minikube
+minikube ssh
+
+docker image ls
 ```
 
 ## Enable the Ingress controller
